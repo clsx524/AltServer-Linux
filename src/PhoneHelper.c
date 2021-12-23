@@ -1,5 +1,6 @@
 #include "PhoneHelper.h"
 #include "phone/global.h"
+#include <stdio.h>
 #include <unistd.h>
 #include <pthread.h>
 #include <string.h>
@@ -12,19 +13,19 @@
 #include <libimobiledevice/mobile_image_mounter.h>
 #include <libimobiledevice/sbservices.h>
 #include <libimobiledevice/service.h>
-#include "common/userpref.h"
-#include "common/utils.h"
+//#include "common/userpref.h"
+//#include "common/utils.h"
 
 #ifndef TOOL_NAME
 #define TOOL_NAME "AltServerLinux"
 #endif
 #include "common.h"
 
-#include "miniwget.h"
-#include "miniupnpc.h"
-#include "upnpcommands.h"
-#include "portlistingparse.h"
-#include "upnperrors.h"
+#include <miniupnpc/miniwget.h>
+#include <miniupnpc/miniupnpc.h>
+#include <miniupnpc/upnpcommands.h>
+#include <miniupnpc/portlistingparse.h>
+#include <miniupnpc/upnperrors.h>
 struct UPNPUrls _upnpUrls = { 0 };
 struct IGDdatas _upnpData = { 0 };
 char upnpExternalAddr[40] = { 0 };

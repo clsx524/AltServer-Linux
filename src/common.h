@@ -1,6 +1,7 @@
 #pragma once
 
 #include <stdint.h>
+#include <stdio.h>
 
 typedef int HWND;
 typedef int HINSTANCE;

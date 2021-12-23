@@ -164,6 +164,7 @@ int main(int argc, char *argv[]) {
         installApp = false;
     } else if (optind + 1 == argc) {
 		ipaPath = argv[optind];
+        installApp = true;
 	} else {
 		printf("Unknown options: ");
  		while (optind < argc)

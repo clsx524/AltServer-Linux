@@ -15,4 +15,4 @@
 	url = https://github.com/NyaMisty/minimalupnpc
 [submodule "libraries/AltSign"]
 	path = libraries/AltSign
-	url = https://github.com/NyaMisty/AltSign-Linux
+	url = https://github.com/clsx524/AltSign-Linux

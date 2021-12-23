@@ -5,7 +5,24 @@ AltServer for AltStore, but on-device
 
 - Preparation: `git clone --recursive https://github.com/NyaMisty/AltServer-Linux`
 
+- prerequisites: xxd, python, uuid, openssl, cmake, zlib
+
 - Install corecrypto_static
+    - download source code from https://developer.apple.com/security/, look for "Download corecrypto source (2020 OS Releases)"
+    - unzip and put corecrypto in the root directory of this repo
+    - replace
+
+```
+#include <mach/mach_time.h>
+```
+
+with following in file corecrypto_test/include/ccshadow_decls.h
+
+```
+#if CC_KERNEL || CC_DARWIN || CORECRYPTO_SIMULATE_POSIX_ENVIRONMENT
+#include <mach/mach_time.h>
+#endif
+```
 
 - Install cpprestsdk static lib
 
