@@ -14,7 +14,7 @@ endif
 %.cpp.o : %.cpp
 	$(CXX) $(CXXFLAGS) $(EXTRA_FLAGS) -o $@ -c $<
 
-CFLAGS := -DHAVE_CONFIG_H -DDEBUG -O0 -g # -mno-default
+CFLAGS := -DHAVE_CONFIG_H -DDEBUG -O0 -g -fcommon # -mno-default
 CXXFLAGS = $(CFLAGS) -std=c++17
 
 main_src := $(wildcard src/*.c) $(wildcard src/*.cpp)

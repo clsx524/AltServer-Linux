@@ -20,7 +20,7 @@ WORKDIR casablanca
 RUN mkdir build
 WORKDIR build
 RUN cmake ../Release -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=0
-RUN make -j6
+RUN make -j4
 RUN make test
 RUN make install
 
@@ -31,7 +31,7 @@ WORKDIR libzip
 RUN mkdir build
 WORKDIR build
 RUN CC=clang-11 CXX=clang++-11 cmake .. -DBUILD_SHARED_LIBS=OFF
-RUN make -j6
+RUN make
 RUN make test
 RUN make install
 
@@ -43,7 +43,7 @@ RUN rm -rf build && mkdir build
 
 WORKDIR build
 RUN CC=clang-11 CXX=clang++-11 cmake .. -DCMAKE_BUILD_TYPE=Release
-RUN make -j6
+RUN make
 RUN make install
 
 FROM base
@@ -62,6 +62,8 @@ COPY ./libraries /AltServer-Linux/libraries/
 COPY ./src /AltServer-Linux/src/
 COPY ./Makefile /AltServer-Linux/Makefile
 RUN CC=clang-11 CXX=clang++-11 make NO_USBMUXD_STUB=1 NO_UPNP_STUB=1 -j6
+RUN CC=clang-11 CXX=clang++-11 make NO_UPNP_STUB=1
+RUN CC=clang-11 CXX=clang++-11 make
 
-CMD ['./AltServer', '-d']
+CMD ['./AltServer']
 

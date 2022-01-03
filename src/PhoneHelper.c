@@ -13,8 +13,6 @@
 #include <libimobiledevice/mobile_image_mounter.h>
 #include <libimobiledevice/sbservices.h>
 #include <libimobiledevice/service.h>
-//#include "common/userpref.h"
-//#include "common/utils.h"
 
 #ifndef TOOL_NAME
 #define TOOL_NAME "AltServerLinux"
